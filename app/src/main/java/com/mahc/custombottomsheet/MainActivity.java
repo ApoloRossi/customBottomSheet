@@ -34,13 +34,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+       /* Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setTitle(" ");
-        }
+        }*/
 
         /**
          * If we want to listen for states callback
@@ -78,20 +78,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        MergedAppBarLayout mergedAppBarLayout = findViewById(R.id.mergedappbarlayout);
-        MergedAppBarLayoutBehavior mergedAppBarLayoutBehavior = MergedAppBarLayoutBehavior.from(mergedAppBarLayout);
-        mergedAppBarLayoutBehavior.setToolbarTitle("Title Dummy");
-        mergedAppBarLayoutBehavior.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                behavior.setState(BottomSheetBehaviorGoogleMapsLike.STATE_ANCHOR_POINT);
-            }
-        });
-
         bottomSheetTextView = (TextView) bottomSheet.findViewById(R.id.bottom_sheet_title);
-        ItemPagerAdapter adapter = new ItemPagerAdapter(this,mDrawables);
-        ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
-        viewPager.setAdapter(adapter);
+
 
         behavior.setState(BottomSheetBehaviorGoogleMapsLike.STATE_ANCHOR_POINT);
         //behavior.setCollapsible(false);
